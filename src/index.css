@@ -20,6 +20,7 @@ body{
 
 /* Navbar */
 .navbar{
+    font-size: 20px;
     position: relative;
     background: black;
     display:flex;
@@ -59,7 +60,7 @@ body{
 .submenu.show{
     position: absolute;
     top:0;
-    padding-top:30px;
+    padding-top:40px;
     margin-left:10px;
 }
 .submenu>ul{
@@ -158,6 +159,7 @@ body{
         cursor:pointer;
     }
     .phone-btn.close{
+        padding-top:2px;
         font-size: 35px;
     }
     .phone-btn.close #bar{
