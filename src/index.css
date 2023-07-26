@@ -6,6 +6,8 @@
 }
 body{
     min-height:100vh;
+    display: flex;
+    flex-direction: column;
     min-width:300px;
 }
 .no-select{
@@ -204,7 +206,6 @@ body{
 
 /* footer */
 footer{
-    position: relative;
     margin-top:auto;
     display:flex;
     background:gray;

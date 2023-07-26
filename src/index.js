@@ -1,3 +1,6 @@
+var small_screen=false
+var small_screen_limit=470
+
 // Once the document is ready, add all the events
 $(document).ready(function(){
     //Adding the event for the phone button
@@ -6,11 +9,11 @@ $(document).ready(function(){
     //Adding the events for the submenus
     $(".submenu-btn").each(function(){
         id= $(this).attr("id")
-        console.log(id)
         $(this).on("click",function(){
             ShowSubmenu("submenu-"+id)
         })
     })
+    $(window).on("resize",WindowResize)
 })
 
 /* Triggered functions */
