@@ -7,6 +7,7 @@ $(document).ready(function(){
     if($(window).width()<=small_screen_limit){
         small_screen=true
     }
+
     //Adding the event for the phone button
     $(".phone-btn").on("click",phonebtn_clicked)
 
@@ -17,6 +18,8 @@ $(document).ready(function(){
             ShowSubmenu("submenu-"+id)
         })
     })
+
+    //Adding the window resize triggering
     $(window).on("resize",WindowResize)
 })
 
@@ -48,3 +51,4 @@ function WindowResize(){
         }
     }
 }
+

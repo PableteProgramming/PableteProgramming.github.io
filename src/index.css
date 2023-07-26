@@ -9,6 +9,10 @@ body{
     display: flex;
     flex-direction: column;
     min-width:300px;
+    background-color: #888888;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23888888' cx='50' cy='0' r='50'/%3E%3Cg fill='%23818181' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%237a7a7a' cx='50' cy='100' r='50'/%3E%3Cg fill='%23727272' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%236b6b6b' cx='50' cy='200' r='50'/%3E%3Cg fill='%23646464' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%235d5d5d' cx='50' cy='300' r='50'/%3E%3Cg fill='%23575757' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23505050' cx='50' cy='400' r='50'/%3E%3Cg fill='%23494949' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23434343' cx='50' cy='500' r='50'/%3E%3Cg fill='%233c3c3c' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23363636' cx='50' cy='600' r='50'/%3E%3Cg fill='%23303030' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%232a2a2a' cx='50' cy='700' r='50'/%3E%3Cg fill='%23242424' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%231e1e1e' cx='50' cy='800' r='50'/%3E%3Cg fill='%23191919' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23121212' cx='50' cy='900' r='50'/%3E%3Cg fill='%230a0a0a' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23000000' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: contain;
 }
 .no-select{
     -webkit-touch-callout:none;
@@ -20,7 +24,7 @@ body{
 
 /* Navbar */
 .navbar{
-    font-size: 20px;
+    font-size: 30px;
     position: relative;
     background: black;
     display:flex;
@@ -50,9 +54,10 @@ body{
 
 /* Submenus */
 .submenu{
+    font-size: 25px;
     display:flex;
     position: absolute;
-    top:-200px;
+    top:-1000px;
     z-index: -1;
     background:black;
     border-radius: 10px;
@@ -60,8 +65,8 @@ body{
 .submenu.show{
     position: absolute;
     top:0;
-    padding-top:40px;
-    margin-left:10px;
+    padding-top:50px;
+    margin-left:15px;
 }
 .submenu>ul{
     display: flex;
@@ -110,6 +115,7 @@ body{
 @media screen and (max-width: 470px) {
     /* Navbar */
     .navbar{
+        font-size: 25px;
         position: absolute;
         top:-1000px;
         width:100%;
@@ -137,7 +143,7 @@ body{
         position: relative;
         top:0;
         width:100%;
-        height:40px;
+        height:50px;
         background: black;
     }
     .phone-btn{
@@ -145,7 +151,7 @@ body{
         position: absolute;
         top:0;
         right:0;
-        padding: 5px 10px;
+        padding: 9px 10px;
     }
     .phone-btn #bar{
         position: relative;
@@ -159,7 +165,7 @@ body{
         cursor:pointer;
     }
     .phone-btn.close{
-        padding-top:2px;
+        padding-top:6px;
         font-size: 35px;
     }
     .phone-btn.close #bar{
@@ -183,6 +189,7 @@ body{
         width:100%;
     }
     .submenu.show{
+        font-size: 20px;
         z-index: 0;
         position: relative;
         padding:0;
@@ -198,12 +205,24 @@ body{
 }
 
 
-/* container */
+/* main content */
+
 .container{
     position: relative;
     display:flex;
-    background:red;
+    flex-direction: column;
     z-index:-1;
+    width:80%;
+    margin-left: 10%;
+    margin-top: 30px;
+}
+
+.introduction{
+    font-size: 20px;
+    display: flex;
+    background: rgb(63, 185, 255);
+    border-radius: 20px;
+    padding: 15px 20px;
 }
 
 /* footer */
