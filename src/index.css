@@ -1,56 +1,92 @@
+/* Default */
 *{
     padding:0;
     margin:0;
     box-sizing: border-box;
 }
-
 body{
     min-height:100vh;
     min-width:300px;
-    display:flex;
-    flex-direction: column;
 }
+.no-select{
+    -webkit-touch-callout:none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}  
 
 /* Navbar */
 .navbar{
     position: relative;
+    background: black;
     display:flex;
-    background:black;
+    z-index:0;
 }
-
-.navbar>ul{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width:100%;
-    list-style: none;
-}
-
-.navbar>ul>li{
+.navbar .links{
     display: flex;
-    width:100%;
+    list-style: none;
+    height:100%;
+}
+.navbar .links>li{
+    display: flex;
+    height:100%;
+}
+.navbar .links>li>a,
+.navbar .links>li>.link{
+    height:100%;
+    padding: 7px 25px;
+    text-decoration: none;
+    color:white;
+}
+.navbar .links>li>a:hover,
+.navbar .links>li>.link:hover{
+    color:gray;
+    cursor:pointer;
 }
 
-.navbar>ul>li>a{
+/* Submenus */
+.submenu{
+    display:flex;
+    position: absolute;
+    top:-200px;
+    z-index: -1;
+    background:black;
+    border-radius: 10px;
+}
+.submenu.show{
+    position: absolute;
+    top:0;
+    padding-top:30px;
+    margin-left:10px;
+}
+.submenu>ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    height:100%;
+}
+.submenu>ul>li>a{
     display: flex;
     color:white;
     text-decoration: none;
-    width:100%;
-    justify-content: center;
-    padding:7px 0;
+    padding: 4px 10px;
+}
+.submenu>ul>li:last-child>a{
+    padding-bottom: 10px;
+}
+.submenu>ul>li>a:hover{
+    color:gray;
+    cursor:pointer;
 }
 
-.navbar>ul>li>a:hover{
-    background:gray;
-    transition: all 0.3s ease;
-}
-
-.btn-holder,.phone-btn{
+/* Navbar for phones */
+.btn-holder,
+.phone-btn{
     display:flex;
     position: absolute;
     top:-1000px;
 }
-
 .phone-btn{
     display:flex;
     color:white;
@@ -58,7 +94,6 @@ body{
     height:40px;
     overflow: hidden;
 }
-
 .btn-holder>.title{
     display:flex;
     color:white;
@@ -68,17 +103,32 @@ body{
     font-size: 20px;
 }
 
+/* For small/phone screens */
 @media screen and (max-width: 470px) {
+    /* Navbar */
     .navbar{
         position: absolute;
-        top:-100px;
+        top:-1000px;
         width:100%;
         transition: all 0.3s ease;
     }
-    .navbar>ul{
+    .navbar.show{
+        top:40px;
+        transition: all 0.3s ease;
+    }
+    .navbar .links{
         display:flex;
         flex-direction: column;
+        width:100%;
     }
+    .navbar .links>li,
+    .navbar .links>li>a,
+    .navbar .links>li>.link{
+        display:flex;
+        width:100%;
+    }
+
+    /* Phone button */
     .btn-holder{
         display: flex;
         position: relative;
@@ -105,10 +155,6 @@ body{
     .phone-btn:hover{
         cursor:pointer;
     }
-    .navbar.show{
-        top:40px;
-        transition: all 0.3s ease;
-    }
     .phone-btn.close{
         font-size: 35px;
     }
@@ -120,19 +166,47 @@ body{
         opacity: 1;
         position: relative;
     }
+
+    /* submenu */
+    .navbar .links>li{
+        display:flex;
+        flex-direction: column;
+    }
+    .submenu>ul{
+        padding:0;
+        display: flex;
+        flex-direction: column;
+        width:100%;
+    }
+    .submenu.show{
+        z-index: 0;
+        position: relative;
+        padding:0;
+        margin:0;
+    }
+    .submenu>ul>li{
+        width:100%;
+    }
+    .submenu>ul>li>a{
+        width:100%;
+        padding: 7px 50px;
+    }
 }
 
 
 /* container */
 .container{
+    position: relative;
     display:flex;
     background:red;
+    z-index:-1;
 }
-
 
 /* footer */
 footer{
+    position: relative;
     margin-top:auto;
     display:flex;
     background:gray;
+    z-index: -1;
 }
