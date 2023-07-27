@@ -215,6 +215,7 @@ body{
     width:80%;
     margin-left: 10%;
     margin-top: 30px;
+    align-items: center;
 }
 
 .introduction{
@@ -223,6 +224,69 @@ body{
     background: rgb(63, 185, 255);
     border-radius: 20px;
     padding: 15px 20px;
+}
+
+/* Carousel */
+.carousel{
+    position: relative;
+    display: flex;
+    margin-top: 30px;
+    width:60%;
+    height:300px;
+}
+
+.carousel>.items{
+    position: relative;
+    display: flex;
+    background:red;
+    width:100%;
+    height:100%;
+}
+
+.carousel .item{
+    position: relative;
+    display: none;
+}
+
+.carousel .item.show{
+    position: relative;
+    font-size: 50px;
+    display:flex;
+    background: blue;
+    width:100%;
+    height:100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel>.buttons{
+    position: absolute;
+    height:40px;
+    width: 100%;
+    bottom: 0;
+    left:0;
+    background:yellow;
+    text-align: center;
+    align-items: center;
+    padding-top:10px;
+}
+
+.carousel .button{
+    display:inline-block;
+    width:15px;
+    height:15px;
+    background: black;
+    margin: 0 5px;
+    border-radius: 50%;
+    opacity: 0.2;
+}
+
+.carousel .button:hover{
+    cursor: pointer;
+}
+
+.carousel .button.selected{
+    opacity:0.5;
 }
 
 /* footer */
