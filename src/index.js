@@ -21,6 +21,10 @@ $(document).ready(function(){
 
     //Adding the window resize triggering
     $(window).on("resize",WindowResize)
+
+    //Adding the carousel
+    const carousel= new Carousel(".carousel")
+    carousel.activate()
 })
 
 /* Triggered functions */
