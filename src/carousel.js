@@ -31,9 +31,9 @@ class Carousel{
         //Unselecting the current slide
         $($(this.items+" .item").toArray()[this.index]).removeClass("show")
         $($(this.buttons+" .button").toArray()[this.index]).removeClass("selected")
-        //Selecting the selected slide => PROBLEM
-        $($(this.items+" .item").toArray()[index]).removeClass("show")
-        $($(this.buttons+" .button").toArray()[index]).removeClass("selected")
+        //Selecting the selected slide
+        $($(this.items+" .item").toArray()[index]).addClass("show")
+        $($(this.buttons+" .button").toArray()[index]).addClass("selected")
         this.index=index
     }
     activate(){
