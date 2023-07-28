@@ -289,6 +289,36 @@ header{
 .carousel .button.selected{
     opacity:0.5;
 }
+.carousel .arrows{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    height:100%;
+}
+.carousel .right-arrow-container{
+    margin-left: auto;
+    padding-right: 40px;
+}
+.carousel .left-arrow-container{
+    width:100%;
+    padding-left: 40px;
+}
+.carousel .right-arrow-container,
+.carousel .left-arrow-container{
+    display:flex;
+    font-size:50px;
+    align-items: center;
+}
+.carousel .right-arrow-container #right-arrow,
+.carousel .left-arrow-container #left-arrow{
+    opacity:0.3;
+}
+.carousel .right-arrow-container #right-arrow:hover,
+.carousel .left-arrow-container #left-arrow:hover{
+    opacity:0.8;
+    cursor:pointer;
+}
 
 /* footer */
 footer{
