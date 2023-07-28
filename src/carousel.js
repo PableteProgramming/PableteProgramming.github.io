@@ -12,6 +12,14 @@
         <div class="button"></div>
         <div class="button"></div>
     </div>
+    <div class="arrows">
+        <div class="left-arrow-container">
+            <i class="fa-solid fa-caret-left" id="left-arrow"></i>
+        </div>       
+        <div class="right-arrow-container">
+            <i class="fa-solid fa-caret-right" id="right-arrow"></i>
+        </div>
+    </div>
 </div>
 */
 class Carousel{
@@ -25,7 +33,6 @@ class Carousel{
         //Show the first slide
         $($(this.items+" .item").toArray()[this.index]).addClass("show")
         $($(this.buttons+" .button").toArray()[this.index]).addClass("selected")
-        
     }
     buttonclicked(index){
         //Unselecting the current slide
