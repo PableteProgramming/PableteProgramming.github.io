@@ -29,12 +29,29 @@ class Carousel{
         this.buttons=this.id+" .buttons"
         this.items= this.id+" .items"
         this.index=index-1
+        this.arrows= this.id+" .arrows"
+        this.maxIndex= $(this.buttons+" .button").toArray().length-1
 
         //Show the first slide
         $($(this.items+" .item").toArray()[this.index]).addClass("show")
         $($(this.buttons+" .button").toArray()[this.index]).addClass("selected")
     }
-    buttonclicked(index){
+    arrowClicked(right=true){
+        //Changing to the next slide
+        if(right){
+            this.update(this.index+1)
+        }else{
+            this.update(this.index-1)
+        }
+    }
+    update(index){
+        //Checking for overlapping Array
+        if(index<0){
+            index=this.maxIndex
+        }else if(index>this.maxIndex){
+            index=0
+        }
+
         //Unselecting the current slide
         $($(this.items+" .item").toArray()[this.index]).removeClass("show")
         $($(this.buttons+" .button").toArray()[this.index]).removeClass("selected")
@@ -45,12 +62,23 @@ class Carousel{
         this.index=index
     }
     activate(){
+        //Avoid getting mixed with class "this" and jquery "this"
         let $this=this
+
+        //Adding the functionalities to the buttons
         $(this.buttons+" .button").each(function(index){
             var button=$(this)
             button.on("click",function(){
-                $this.buttonclicked(index)
+                $this.update(index)
             })
+        })
+
+        //Adding the functionalities to the arrows
+        $(this.arrows+" #left-arrow").on("click",function(){
+            $this.arrowClicked(false)
+        })
+        $(this.arrows+" #right-arrow").on("click",function(){
+            $this.arrowClicked()
         })
     }
 }
