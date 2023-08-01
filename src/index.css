@@ -120,103 +120,7 @@ header{
     font-size: 20px;
 }
 
-/* For small/phone screens */
-@media screen and (max-width: 470px) {
-    /* Navbar */
-    .navbar{
-        font-size: 25px;
-        position: absolute;
-        top:-1000px;
-        width:100%;
-        transition: all 0.3s ease;
-    }
-    .navbar.show{
-        top:40px;
-        transition: all 0.3s ease;
-    }
-    .navbar .links{
-        display:flex;
-        flex-direction: column;
-        width:100%;
-    }
-    .navbar .links>li,
-    .navbar .links>li>a,
-    .navbar .links>li>.link{
-        display:flex;
-        width:100%;
-    }
-
-    /* Phone button */
-    .btn-holder{
-        display: flex;
-        position: relative;
-        top:0;
-        width:100%;
-        height:50px;
-        background: black;
-        z-index:1;
-    }
-    .phone-btn{
-        display: flex;
-        position: absolute;
-        top:0;
-        right:0;
-        padding: 9px 10px;
-    }
-    .phone-btn #bar{
-        position: relative;
-        opacity: 1;
-    }
-    .phone-btn #cross{
-        opacity: 0;
-        position: absolute;
-    }
-    .phone-btn:hover{
-        cursor:pointer;
-    }
-    .phone-btn.close{
-        padding-top:6px;
-        font-size: 35px;
-    }
-    .phone-btn.close #bar{
-        opacity: 0;
-        position: absolute;
-    }
-    .phone-btn.close #cross{
-        opacity: 1;
-        position: relative;
-    }
-
-    /* submenu */
-    .navbar .links>li{
-        display:flex;
-        flex-direction: column;
-    }
-    .submenu>ul{
-        padding:0;
-        display: flex;
-        flex-direction: column;
-        width:100%;
-    }
-    .submenu.show{
-        font-size: 20px;
-        z-index: 0;
-        position: relative;
-        padding:0;
-        margin:0;
-    }
-    .submenu>ul>li{
-        width:100%;
-    }
-    .submenu>ul>li>a{
-        width:100%;
-        padding: 7px 50px;
-    }
-}
-
-
 /* main content */
-
 .container{
     position: relative;
     display:flex;
@@ -227,12 +131,29 @@ header{
     margin-top: 30px;
     align-items: center;
 }
+
+/* Introduction */
 .introduction{
     font-size: 20px;
     display: flex;
     background: rgb(63, 185, 255);
     border-radius: 20px;
     padding: 15px 20px;
+}
+@media screen and (max-width: 780px) {
+    .introduction{
+        font-size: 17px;
+    }
+}
+@media screen and (max-width: 560px) {
+    .introduction{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 370px) {
+    .introduction{
+        font-size: 12px;
+    }
 }
 
 /* Carousel */
@@ -249,6 +170,7 @@ header{
     width:100%;
     height:100%;
     z-index:-1;
+    font-size: 50px;
 }
 .carousel .item{
     position: relative;
@@ -258,7 +180,6 @@ header{
 .carousel .item.show{
     position: relative;
     opacity: 1;
-    font-size: 50px;
     display:flex;
     width:100%;
     height:100%;
@@ -322,10 +243,127 @@ header{
     opacity:0.8;
     cursor:pointer;
 }
+@media screen and (max-width: 790px) {
+    .carousel>.items{
+        font-size: 30px;
+    }
+    .carousel .right-arrow-container,
+    .carousel .left-arrow-container{
+        font-size:45px;
+    }
+}
+@media screen and (max-width: 670px) {
+    .carousel{
+        width:100%;
+    }
+}
+@media screen and (max-width: 350px) {
+    .carousel>.items{
+        font-size:20px;
+    }
+    .carousel .button{
+        width:12px;
+        height:12px;
+    }
+}
 
 /* footer */
 footer{
     margin-top:auto;
     display:flex;
     background:gray;
+}
+
+/* For small/phone screens */
+@media screen and (max-width: 470px) {
+    /* Navbar */
+    .navbar{
+        font-size: 25px;
+        position: absolute;
+        top:-1000px;
+        width:100%;
+        transition: all 0.3s ease;
+    }
+    .navbar.show{
+        top:40px;
+        transition: all 0.3s ease;
+    }
+    .navbar .links{
+        display:flex;
+        flex-direction: column;
+        width:100%;
+    }
+    .navbar .links>li,
+    .navbar .links>li>a,
+    .navbar .links>li>.link{
+        display:flex;
+        width:100%;
+    }
+
+    /* Phone button */
+    .btn-holder{
+        display: flex;
+        position: relative;
+        top:0;
+        width:100%;
+        height:50px;
+        background: black;
+        z-index:1;
+    }
+    .phone-btn{
+        display: flex;
+        position: absolute;
+        top:0;
+        right:0;
+        padding: 10px 10px;
+    }
+    .phone-btn #bar{
+        position: relative;
+        opacity: 1;
+    }
+    .phone-btn #cross{
+        opacity: 0;
+        position: absolute;
+    }
+    .phone-btn:hover{
+        cursor:pointer;
+    }
+    .phone-btn.close{
+        padding-top:7px;
+        font-size: 35px;
+    }
+    .phone-btn.close #bar{
+        opacity: 0;
+        position: absolute;
+    }
+    .phone-btn.close #cross{
+        opacity: 1;
+        position: relative;
+    }
+
+    /* submenu */
+    .navbar .links>li{
+        display:flex;
+        flex-direction: column;
+    }
+    .submenu>ul{
+        padding:0;
+        display: flex;
+        flex-direction: column;
+        width:100%;
+    }
+    .submenu.show{
+        font-size: 20px;
+        z-index: 0;
+        position: relative;
+        padding:0;
+        margin:0;
+    }
+    .submenu>ul>li{
+        width:100%;
+    }
+    .submenu>ul>li>a{
+        width:100%;
+        padding: 7px 50px;
+    }
 }
