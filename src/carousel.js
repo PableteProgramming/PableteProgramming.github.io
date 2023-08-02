@@ -7,10 +7,12 @@
         <div class="item" style="background:violet;"></div>
     </div>
     <div class="buttons">
+        <!--This part will be added dynamically-->
         <div class="button selected"></div>
         <div class="button"></div>
         <div class="button"></div>
         <div class="button"></div>
+        <!--------------------------------->
     </div>
     <div class="arrows">
         <div class="left-arrow-container">
@@ -30,7 +32,14 @@ class Carousel{
         this.items= this.id+" .items"
         this.index=index-1
         this.arrows= this.id+" .arrows"
-        this.maxIndex= $(this.buttons+" .button").toArray().length-1
+        this.maxIndex= $(this.items+" .item").toArray().length-1
+
+        //Add the buttons dynamically
+        //Avoid getting mixed with class "this" and jquery "this"
+        let $this=this
+        $(this.items+" .item").each(function(){
+            $($this.buttons).append('<div class="button"></div>')
+        })
 
         //Show the first slide
         $($(this.items+" .item").toArray()[this.index]).addClass("show")
