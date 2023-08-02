@@ -1,10 +1,10 @@
 /* Caroussel structure:
 <div class="${id}">
     <div class="items">
-        <div class="item show" style="background:red;"></div>
-        <div class="item" style="background:green;"></div>
-        <div class="item" style="background:yellow;"></div>
-        <div class="item" style="background:violet;"></div>
+        <div class="item show"><img src="" alt=""></div>
+        <div class="item"><img src="" alt=""></div>
+        <div class="item"><img src="" alt=""></div>
+        <div class="item"><img src="" alt=""></div>
     </div>
     <div class="buttons">
         <!--This part will be added dynamically-->

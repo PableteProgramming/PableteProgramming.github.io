@@ -1,0 +1,126 @@
+.carousel{
+    position: relative;
+    display: flex;
+    margin-top: 30px;
+    width:60%;
+    height:300px;
+}
+.carousel>.items{
+    position: relative;
+    display: flex;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    font-size: 50px;
+}
+.carousel .item{
+    position: absolute;
+    display:none;
+    opacity:0;
+    display:flex;
+    width:100%;
+    height:100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.carousel .item,
+.carousel .items>#bg{
+    border-radius: 10px;
+}
+.carousel .item.show{
+    position: relative;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
+.carousel .items>#bg{
+    position: absolute;
+    width:100%;
+    height:100%;
+    background: black;
+    opacity: 0.2;
+}
+.carousel>.items .item>img{
+    height:100%;
+    width:auto;
+}
+.carousel>.buttons{
+    position: absolute;
+    height:40px;
+    width: 100%;
+    bottom: 0;
+    left:0;
+    text-align: center;
+    align-items: center;
+    padding-top:10px;
+    z-index:1;
+}
+.carousel .button{
+    display:inline-block;
+    width:15px;
+    height:15px;
+    background: black;
+    margin: 0 5px;
+    border-radius: 50%;
+    opacity: 0.2;
+}
+.carousel .button:hover{
+    cursor: pointer;
+}
+.carousel .button.selected{
+    opacity:0.5;
+}
+.carousel .arrows{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    height:100%;
+    z-index:0;
+}
+.carousel .right-arrow-container{
+    margin-left: auto;
+    padding-right: 40px;
+}
+.carousel .left-arrow-container{
+    width:100%;
+    padding-left: 40px;
+}
+.carousel .right-arrow-container,
+.carousel .left-arrow-container{
+    display:flex;
+    font-size:50px;
+    align-items: center;
+}
+.carousel .right-arrow-container #right-arrow,
+.carousel .left-arrow-container #left-arrow{
+    opacity:0.3;
+}
+.carousel .right-arrow-container #right-arrow:hover,
+.carousel .left-arrow-container #left-arrow:hover{
+    opacity:0.8;
+    cursor:pointer;
+}
+@media screen and (max-width: 790px) {
+    .carousel>.items{
+        font-size: 30px;
+    }
+    .carousel .right-arrow-container,
+    .carousel .left-arrow-container{
+        font-size:45px;
+    }
+}
+@media screen and (max-width: 670px) {
+    .carousel{
+        width:100%;
+    }
+}
+@media screen and (max-width: 350px) {
+    .carousel>.items{
+        font-size:20px;
+    }
+    .carousel .button{
+        width:12px;
+        height:12px;
+    }
+}
