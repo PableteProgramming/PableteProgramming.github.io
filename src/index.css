@@ -165,7 +165,7 @@ footer{
 }
 
 /* For small/phone screens */
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 480px) {
     /* Navbar */
     .navbar{
         font-size: 25px;
