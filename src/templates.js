@@ -5,8 +5,10 @@ class Template{
     }
     Append(){
         let $this=this
+        jQuery.ajaxSetup({async:false})
         $.get($this.file,function(data){
             $($this.tag).append(data)
         })
+        jQuery.ajaxSetup({async:true})
     }
 }

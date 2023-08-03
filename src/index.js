@@ -3,13 +3,11 @@ var small_screen_limit=470
 
 // Once the document is ready, add all the events
 $(document).ready(function(){
-    /*
     //Adding the templates elements
     const header= new Template("header","src/templates/header.html")
     header.Append()
     const footer= new Template("footer","src/templates/footer.html")
     footer.Append()
-    */
 
     //Setting initial window width vars
     if($(window).width()<=small_screen_limit){
