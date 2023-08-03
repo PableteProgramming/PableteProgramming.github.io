@@ -34,6 +34,9 @@ class Carousel{
         this.arrows= this.id+" .arrows"
         this.maxIndex= $(this.items+" .item").toArray().length-1
 
+        //Checking for overflow
+        if(this.index<0){this.index=0}
+        
         //Add the buttons dynamically
         //Avoid getting mixed with class "this" and jquery "this"
         let $this=this

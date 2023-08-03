@@ -1,0 +1,22 @@
+.slider{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    background: green;
+}
+
+.slider>.img{
+    display: none;
+}
+
+.slider>.img#main{
+    display: flex;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+    background: yellow;
+}
+
+.slider>.img>img{
+    display: flex;
+}

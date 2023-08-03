@@ -1,0 +1,11 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    background: red;
+    width:100%;
+    align-items: center;
+}
+
+.slider{
+    width:80%;
+}
