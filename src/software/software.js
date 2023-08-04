@@ -8,4 +8,5 @@ $(document).ready(function(){
 
     //Adding the slider
     const slider= new Slider(".slider",1)
+    slider.activate()
 })

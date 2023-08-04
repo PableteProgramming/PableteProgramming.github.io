@@ -1,22 +1,74 @@
 .slider{
+    position: relative;
     display: flex;
-    flex-direction: row;
-    overflow: hidden;
     background: green;
+    z-index: 2;
+    justify-content:center;
 }
-
-.slider>.img{
-    display: none;
-}
-
-.slider>.img#main{
+.slider .imgs{
+    position: relative;
     display: flex;
     width:100%;
-    align-items: center;
     justify-content: center;
-    background: yellow;
+    height:200px;
 }
-
-.slider>.img>img{
+.slider .img{
+    position: absolute;
+    background: red;
+    height:100%;
+    transition: transform 0.3s ease-in, display 0.3s 0s, opacity 0.3s ease-in;
+    transform: translateX(0) scale(75%);
+    z-index: -1;
+    opacity: 0;
+}
+.slider .imgs .img#active,
+.slider .imgs .img#next,
+.slider .imgs .img#prev{
+    opacity: 1;
     display: flex;
+}
+.slider .imgs .img#active{
+    transform: translateX(0);
+    z-index:0;
+}
+.slider .imgs .img#next{
+    transform: translateX(50px) scale(75%);
+    z-index:-1;
+}
+.slider .imgs .img#prev{
+    transform: translateX(-50px) scale(75%);
+    z-index:-1;
+}
+.slider .arrows{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    font-size: 25px;
+}
+.slider .arrows .left-arrow-container{
+    display: flex;
+    width:100%;
+    margin-left: 10px;
+    align-items: center;
+    height:100%;
+}
+.slider .arrows .right-arrow-container{
+    display: flex;
+    margin-left: auto;
+    height:100%;
+    margin-right:10px;
+    align-items: center;
+}
+.slider .arrows #left-arrow,
+.slider .arrows #right-arrow{
+    opacity: 0.4;
+}
+.slider .arrows #left-arrow:hover,
+.slider .arrows #right-arrow:hover{
+    cursor:pointer;
+    opacity: 0.9;
 }
