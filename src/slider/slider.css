@@ -5,6 +5,11 @@
     z-index: 2;
     justify-content:center;
 }
+.slider.error{
+    background: grey;
+    color:black;
+    font-size:30px;
+}
 .slider .imgs{
     position: relative;
     display: flex;

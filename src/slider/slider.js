@@ -20,10 +20,16 @@
 class Slider{
     constructor(tag,index=0){
         //Initializing the variables
+        this.error=false
         this.slider=tag
         this.images= tag+" .img"
         this.index=index-1
         this.maxIndex= $(this.images).toArray().length-1
+        
+        //Checking if slider can be displayed
+        if(this.maxIndex<=1){this.showError("Not enough elements in the slider")}
+        
+        //Initializing more vars
         this.right_arrow= tag+ " #right-arrow"
         this.left_arrow= tag+ " #left-arrow"
         this.nextIndex=this.index+1
@@ -40,6 +46,10 @@ class Slider{
         $($(this.images).toArray()[this.prevIndex]).attr("id","prev")
     }
     update(right=true){
+        //checking for error
+        if(this.error){return}
+
+        //Old vars
         var old_index=this.index
         var old_nextIndex= this.nextIndex
         var old_prevIndex= this.prevIndex
@@ -72,6 +82,9 @@ class Slider{
         if($($(this.images).toArray()[old_prevIndex]).attr("id")=="prev"){$($(this.images).toArray()[old_prevIndex]).attr("id","")}
     }
     activate(){
+        //checking for error
+        if(this.error){return}
+
         //adding the trigger events
         let $this=this
         $(this.right_arrow).on("click",function(){
@@ -80,5 +93,11 @@ class Slider{
         $(this.left_arrow).on("click",function(){
             $this.update(false)
         })
+    }
+    showError(_text){
+        this.error=true
+        $(this.slider).text("")
+        $(this.slider).append(`<p>${_text}</p>`)
+        $(this.slider).addClass("error")
     }
 }
