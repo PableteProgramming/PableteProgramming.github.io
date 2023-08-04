@@ -1,11 +1,10 @@
 /* Slider structure:
 <div class="slider">
     <div class="imgs">
-        <div class="img">hello 1</div>
-        <div class="img">hello 2</div>
-        <div class="img">hello 3</div>
-        <div class="img">hello 4</div>
-        <div class="img">hello 5</div>
+        <div class="img"><img src="../../resources/img/cat.png" alt=""></div>
+        <div class="img"><img src="../../resources/img/cat-green.png" alt=""></div>
+        <div class="img"><img src="../../resources/img/cat-red.png" alt=""></div>
+        <div class="img"><img src="../../resources/img/cat-white.png" alt=""></div>
     </div>
     <div class="arrows">
         <div class="left-arrow-container">
@@ -27,7 +26,7 @@ class Slider{
         this.maxIndex= $(this.images).toArray().length-1
         
         //Checking if slider can be displayed
-        if(this.maxIndex<=1){this.showError("Not enough elements in the slider")}
+        if(this.maxIndex<=2){this.showError("Not enough elements in the slider")}
         
         //Initializing more vars
         this.right_arrow= tag+ " #right-arrow"

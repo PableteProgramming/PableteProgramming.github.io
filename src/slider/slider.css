@@ -21,9 +21,9 @@
     position: absolute;
     background: red;
     height:100%;
-    transition: transform 0.3s ease-in, display 0.3s 0s, opacity 0.3s ease-in, z-index 0.3s ease-in;
+    transition: transform 0.3s ease-in-out, display 0.3s 0s, opacity 0.3s ease-in-out, z-index 0.3s 0s;
     transform: translateX(0) scale(75%);
-    z-index: -1;
+    z-index: -3;
     opacity: 0;
     width:200px;
     overflow: hidden;
@@ -44,7 +44,7 @@
 }
 .slider .imgs .img#prev{
     transform: translateX(-130px) scale(75%);
-    z-index:-1;
+    z-index:-2;
 }
 .slider .arrows{
     display: flex;
