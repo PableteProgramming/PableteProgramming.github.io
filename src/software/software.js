@@ -7,6 +7,6 @@ $(document).ready(function(){
     footer("footer","../templates/footer/footer.html")
 
     //Adding the slider
-    const slider= new Slider(".slider",1)
+    const slider= new Slider(".slider","40vh",1)
     slider.activate()
 })

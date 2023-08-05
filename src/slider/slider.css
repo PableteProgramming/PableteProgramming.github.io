@@ -14,7 +14,7 @@
     display: flex;
     width:100%;
     justify-content: center;
-    height:40vh;
+    /*height:40vh;*/ /* Added dynamically */
 }
 .slider .img{
     border-radius: 10px;
@@ -25,7 +25,7 @@
     transform: translateX(0) scale(75%);
     z-index: -3;
     opacity: 0;
-    width:40vh;
+    /*width:40vh;*/ /* Added dynamically */
     overflow: hidden;
 }
 .slider .imgs .img#active,

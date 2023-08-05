@@ -17,13 +17,14 @@
 </div>
 */
 class Slider{
-    constructor(tag,index=0){
+    constructor(tag,height,index=0){
         //Initializing the variables
         this.error=false
         this.slider=tag
         this.images= tag+" .img"
         this.index=index-1
         this.maxIndex= $(this.images).toArray().length-1
+        this.height=height
         
         //Checking if slider can be displayed
         if(this.maxIndex<=2){this.showError("Not enough elements in the slider")}
@@ -38,6 +39,12 @@ class Slider{
 
         //Checking for overflow
         if(this.index<0){this.index=0}
+
+        //Adding the styles depending on height
+        $(this.slider +" .imgs").css("height",this.height)
+        $(this.images).css("width",this.height)
+        /*$(this.right_arrow).css("transform",`translateX(${this.height/1.6})`)
+        $(this.left_arrow).css("transform",`translateX(${this.height/1.6})`)*/
 
         //Showing the first image and setting previous and next image
         $($(this.images).toArray()[this.index]).attr("id","active")
