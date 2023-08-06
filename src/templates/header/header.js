@@ -39,7 +39,6 @@ function ShowSubmenu(submenu_class){
 }
 
 function WindowResize(){
-    console.log(small_screen)
     if(($(window).width()<=small_screen_limit && small_screen==false) || ($(window).width()>small_screen_limit && small_screen==true)){
         //Change to screen type
         $(".navbar").removeClass("show")
