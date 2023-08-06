@@ -1,9 +1,9 @@
 /* Slider structure:
 <div class="slider">
     <div class="imgs">
-        <div class="img"><img src="../../resources/img/cat.png" alt=""></div>
-        <div class="img"><img src="../../resources/img/cat-green.png" alt=""></div>
-        <div class="img"><img src="../../resources/img/cat-red.png" alt=""></div>
+        <div class="img" id="prev"><img src="../../resources/img/cat.png" alt="" class="link" id="/"></div>
+        <div class="img" id="active"><img src="../../resources/img/cat-green.png" alt=""></div>
+        <div class="img" id="next"><img src="../../resources/img/cat-red.png" alt=""></div>
         <div class="img"><img src="../../resources/img/cat-white.png" alt=""></div>
     </div>
     <div class="arrows">
@@ -53,6 +53,20 @@ class Slider{
         this.addImgStyles()
         $(this.right_arrow).css("transform",`translateX(${this.ImgwidthValue/1.6}${this.ImgwidthUnit})`)
         $(this.left_arrow).css("transform",`translateX(-${this.ImgwidthValue/1.6}${this.ImgwidthUnit})`)
+
+        //Check if the images are links and adding styles and triggering if they are
+        $(this.images+">img").each(function(){
+            if($(this).hasClass("link")){
+                //Adding styles
+                $(this).css("cursor","pointer")
+
+                //Redirect to link if clicked
+                var link= $(this).attr("id")
+                $(this).on("click",function(){
+                    $(location).attr("href",link)
+                })
+            }
+        })
     }
     //Delete the dynamic transform styles for the old next and prev
     deleteImgStyles(){
