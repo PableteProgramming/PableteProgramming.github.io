@@ -1,2 +1,2 @@
-- change objects height depending on sliders
 - fix images streching when width is "too" big
+- Add the custom width and height change to the slider class itself as dictionnary param

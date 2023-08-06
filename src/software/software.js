@@ -15,22 +15,7 @@ $(document).ready(function(){
     }
 
     //Adding the slider
-    slider= new Slider(".slider","40vw",1)
+    slider= new Slider(".slider",[[900,"40vw"],[null,"30vw"]],1)
     slider.activate()
     //Adding the window resize triggering
-    $(window).on("resize",WindowResize)
 })
-
-function WindowResize(){
-    if(($(window).width()<=slider_small_screen_limit && small_screen==false)){
-        //Change to small screen type
-        slider.updateSliderWidth("40vw")
-        small_screen=true
-    }
-    else if(($(window).width()>slider_small_screen_limit && small_screen==true)){
-        //Big screen type
-        console.log("big screen")
-        slider.updateSliderWidth("30vw")
-        small_screen=false
-    }
-}
