@@ -141,16 +141,15 @@ class Slider{
 
         //delete old styles
         this.#deleteImgStyles()
+        //Delete the ones that have old ids
+        if($($(this.#images).toArray()[old_index]).attr("id")=="active"){$($(this.#images).toArray()[old_index]).attr("id","")}
+        if($($(this.#images).toArray()[old_nextIndex]).attr("id")=="next"){$($(this.#images).toArray()[old_nextIndex]).attr("id","")}
+        if($($(this.#images).toArray()[old_prevIndex]).attr("id")=="prev"){$($(this.#images).toArray()[old_prevIndex]).attr("id","")}
 
         //Update graphics
         $($(this.#images).toArray()[this.#index]).attr("id","active")
         $($(this.#images).toArray()[this.#nextIndex]).attr("id","next")
         $($(this.#images).toArray()[this.#prevIndex]).attr("id","prev")
-
-        //Delete the ones that have old ids
-        if($($(this.#images).toArray()[old_index]).attr("id")=="active"){$($(this.#images).toArray()[old_index]).attr("id","")}
-        if($($(this.#images).toArray()[old_nextIndex]).attr("id")=="next"){$($(this.#images).toArray()[old_nextIndex]).attr("id","")}
-        if($($(this.#images).toArray()[old_prevIndex]).attr("id")=="prev"){$($(this.#images).toArray()[old_prevIndex]).attr("id","")}
         
         //update styles
         this.#addImgStyles()
