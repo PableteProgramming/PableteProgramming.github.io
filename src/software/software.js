@@ -2,7 +2,6 @@ var small_screen_limit=480
 //Slider
 var small_screen=false
 var slider_small_screen_limit=900
-var slider= null
 // Once the document is ready, add all the events
 $(document).ready(function(){
     //Adding the templates elements
@@ -15,7 +14,7 @@ $(document).ready(function(){
     }
 
     //Adding the slider
-    slider= new Slider(".slider",[[900,"40vw"],[null,"30vw"]],1)
+    const slider= new Slider(".slider",[[900,"40vw"],[null,"30vw"]],1)
     slider.activate()
     //Adding the window resize triggering
 })

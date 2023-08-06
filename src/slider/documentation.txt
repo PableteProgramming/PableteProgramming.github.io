@@ -1,0 +1,25 @@
+To add ans use a Slider, you need to follow these steps:
+1) Add this html code where you want your slider to appear:
+    <div class="slider">
+        <div class="imgs">
+            <div class="img"><img src="../../resources/img/cat.png" alt="" class="link" id="/"></div>
+            <div class="img"><img src="../../resources/img/cat-green.png" alt=""></div>
+            <div class="img"><img src="../../resources/img/cat-red.png" alt=""></div>
+            <div class="img"><img src="../../resources/img/cat-white.png" alt=""></div>
+            <!-- Add more if you want -->
+        </div>
+        <div class="left-arrow-container">
+            <i class="fa-solid fa-caret-left" id="left-arrow"></i>
+        </div>       
+        <div class="right-arrow-container">
+            <i class="fa-solid fa-caret-right" id="right-arrow"></i>
+        </div>
+    </div>
+2) Modify it by adding more images (at least 4 images)
+3) if you want an image to be a link, add the class "link" and the id "PATH_OF_LINK" to the <img> where PATH_OF_LINK is the path of the link
+4) In your html file, you need to include slider.js
+5) In your own javascript file (slider.js has to be included before), you have to add the following to be sure that the slider works properly:
+    const slider= new Slider(".slider",RESIZE,1)
+    slider.activate()
+6) Modify it by changing the RESIZE variable. This variable is an array defining the width of the slider depending on the width of the screen.
+   This variable is an array [[screen_width1,slider_width1],[screen_width2,slider_width2],...,[null,last_slider_width]]

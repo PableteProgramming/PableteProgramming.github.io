@@ -32,6 +32,8 @@ class Slider{
     #Imgwidth
     #ImgwidthValue
     #ImgwidthUnit
+    
+    //Defining the constructor
     constructor(tag,resize_params,index=0){
         //Initializing the variables
         this.#error=false

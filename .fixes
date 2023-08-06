@@ -1,2 +1,2 @@
 - fix images streching when width is "too" big
-- Add the custom width and height change to the slider class itself as dictionnary param
+- fix z-index bug when changing image
