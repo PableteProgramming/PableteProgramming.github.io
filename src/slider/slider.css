@@ -25,6 +25,7 @@
     z-index: -3;
     opacity: 0;
     overflow: hidden;
+    justify-content: center;
 }
 .slider .imgs .img#active,
 .slider .imgs .img#next,
@@ -43,6 +44,10 @@
 .slider .imgs .img#prev{
     z-index:-2;
     filter: blur(4px);
+}
+.slider .imgs .img>img{
+    display: flex;
+    object-fit: cover;
 }
 .slider .left-arrow-container,
 .slider .right-arrow-container{
