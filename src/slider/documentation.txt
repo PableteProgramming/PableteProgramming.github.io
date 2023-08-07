@@ -8,12 +8,7 @@ To add ans use a Slider, you need to follow these steps:
             <div class="img"><img src="../../resources/img/cat-white.png" alt=""></div>
             <!-- Add more if you want -->
         </div>
-        <div class="left-arrow-container">
-            <i class="fa-solid fa-caret-left" id="left-arrow"></i>
-        </div>       
-        <div class="right-arrow-container">
-            <i class="fa-solid fa-caret-right" id="right-arrow"></i>
-        </div>
+        <!--Arrows are added dynamically-->
     </div>
 2) Modify it by adding more images (at least 4 images)
 3) if you want an image to be a link, add the class "link" and the id "PATH_OF_LINK" to the <img> where PATH_OF_LINK is the path of the link

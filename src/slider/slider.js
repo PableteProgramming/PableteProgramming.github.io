@@ -1,21 +1,29 @@
 /* Slider structure:
 <div class="slider">
     <div class="imgs">
-        <div class="img" id="prev"><img src="../../resources/img/cat.png" alt="" class="link" id="/"></div>
-        <div class="img" id="active"><img src="../../resources/img/cat-green.png" alt=""></div>
-        <div class="img" id="next"><img src="../../resources/img/cat-red.png" alt=""></div>
+        <div class="img"><img src="../../resources/img/cat.png" alt="" class="link" id="/"></div>
+        <div class="img"><img src="../../resources/img/cat-green.png" alt=""></div>
+        <div class="img"><img src="../../resources/img/cat-red.png" alt=""></div>
         <div class="img"><img src="../../resources/img/cat-white.png" alt=""></div>
     </div>
-    <div class="arrows">
-        <div class="left-arrow-container">
-            <i class="fa-solid fa-caret-left" id="left-arrow"></i>
-        </div>       
-        <div class="right-arrow-container">
-            <i class="fa-solid fa-caret-right" id="right-arrow"></i>
-        </div>
+    <div class="left-arrow-container">
+        <i class="fa-solid fa-caret-left" id="left-arrow"></i>
+    </div>       
+    <div class="right-arrow-container">
+        <i class="fa-solid fa-caret-right" id="right-arrow"></i>
     </div>
 </div>
 */
+
+const arrows_html= `
+<div class="left-arrow-container">
+    <i class="fa-solid fa-caret-left" id="left-arrow"></i>
+</div>       
+<div class="right-arrow-container">
+    <i class="fa-solid fa-caret-right" id="right-arrow"></i>
+</div>
+`
+
 class Slider{
     //Defining private vars
     #error
@@ -50,6 +58,9 @@ class Slider{
         this.#prevIndex= this.#index-1
         if(this.#prevIndex<0){this.#prevIndex=this.#maxIndex}
         
+        //Adding the arrows
+        $(this.#slider).append(arrows_html)
+
         //Showing the first image and setting previous and next image
         $($(this.#images).toArray()[this.#index]).attr("id","active")
         $($(this.#images).toArray()[this.#nextIndex]).attr("id","next")
